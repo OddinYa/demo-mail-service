@@ -6,10 +6,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 
 @Controller
-@RequestMapping()
-public class Test {
+@RequestMapping("/employeer")
+public class Employees {
 
-    @GetMapping()
+    @GetMapping("/new")
     public String getTest(){
         return "index";
     }

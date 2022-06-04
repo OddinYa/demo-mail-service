@@ -9,11 +9,13 @@ import javax.persistence.*;
 @Data
 
 
-public class Users {
+public class User {
 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "id", nullable = false)
+    @OneToOne
+    @JoinColumn(name = "user_id")
     private int id;
 
     @Column(name = "firstname",nullable = false)
