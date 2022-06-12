@@ -16,6 +16,7 @@ public class User {
     @Column(name = "id", nullable = false)
     @OneToOne
     @JoinColumn(name = "user_id")
+    @JoinColumn(name = "id_user")
     private int id;
 
     @Column(name = "firstname",nullable = false)
