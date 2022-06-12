@@ -9,7 +9,7 @@ import javax.persistence.*;
 public class MailUser {
     @Id
     @OneToOne
-    private User user_id;
+    private User id_password;
 
     private String mail;
 

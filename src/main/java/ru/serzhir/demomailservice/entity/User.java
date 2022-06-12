@@ -1,8 +1,10 @@
 package ru.serzhir.demomailservice.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Table(name = "Users")
 @Entity
@@ -15,9 +17,9 @@ public class User {
     @Id
     @Column(name = "id", nullable = false)
     @OneToOne
-    @JoinColumn(name = "user_id")
-    @JoinColumn(name = "id_user")
-    private int id;
+    @JoinColumn(name = "id_mail_box")
+    @JoinColumn(name = "id_password")
+    private int user_id;
 
     @Column(name = "firstname",nullable = false)
     private String firstName;
@@ -30,5 +32,10 @@ public class User {
 
     @Column(name = "department",nullable = false)
     private String department;
+
+    @Transient
+    @JsonIgnoreProperties("users")
+    @ManyToMany(mappedBy = "users")
+    private List<Mail> mails;
 
 }
