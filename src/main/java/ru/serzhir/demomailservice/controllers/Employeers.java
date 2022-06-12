@@ -18,7 +18,7 @@ public class Employeers {
         this.usersDAO = usersDAO;
     }
 
-    @GetMapping("/")
+    @GetMapping()
     public String getEmployeers(){
 
         return "index";

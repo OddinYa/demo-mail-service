@@ -14,13 +14,13 @@ public class Mail {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_mail", nullable = false)
+    private long mail_id;
 
     @JsonIgnoreProperties("mails")
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name ="mail_user",
             joinColumns =  @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "mail_id"))
-
     private List<User> users;
 
     private String topic;

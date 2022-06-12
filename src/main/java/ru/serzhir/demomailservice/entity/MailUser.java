@@ -6,9 +6,10 @@ import javax.persistence.*;
 
 @Entity
 @Data
+@Table(name = "mail_user")
 public class MailUser {
     @Id
-    private User id_password;
+    private long id_password;
 
     private String mail;
 

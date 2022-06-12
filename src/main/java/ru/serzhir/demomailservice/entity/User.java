@@ -40,8 +40,5 @@ public class User {
     @JoinColumn(name = "id_mail_box")
     private Mail mail;
 
-//    @OneToOne
-//    @JoinColumn(name = "id_password")
-//    private MailUser mailUser;
 
 }
