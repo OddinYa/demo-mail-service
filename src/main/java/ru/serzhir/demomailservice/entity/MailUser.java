@@ -8,7 +8,6 @@ import javax.persistence.*;
 @Data
 public class MailUser {
     @Id
-    @OneToOne
     private User id_password;
 
     private String mail;

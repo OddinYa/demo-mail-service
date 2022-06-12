@@ -2,6 +2,7 @@ package ru.serzhir.demomailservice.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
+import lombok.Getter;
 
 import javax.persistence.*;
 import java.util.List;
@@ -9,16 +10,13 @@ import java.util.List;
 @Table(name = "Users")
 @Entity
 @Data
-
+@Getter
 
 public class User {
 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
-    @Column(name = "id", nullable = false)
-    @OneToOne
-    @JoinColumn(name = "id_mail_box")
-    @JoinColumn(name = "id_password")
+    @Column(name = "user_id", nullable = false)
     private int user_id;
 
     @Column(name = "firstname",nullable = false)
@@ -37,5 +35,13 @@ public class User {
     @JsonIgnoreProperties("users")
     @ManyToMany(mappedBy = "users")
     private List<Mail> mails;
+
+    @OneToOne
+    @JoinColumn(name = "id_mail_box")
+    private Mail mail;
+
+//    @OneToOne
+//    @JoinColumn(name = "id_password")
+//    private MailUser mailUser;
 
 }
